@@ -9,12 +9,12 @@
 <h1>Replican't</h1>
 <h2>An annoyance free CAPTCHA replacement system.</h2> 
 
-<form method="post" action="index.php">
+<form method="post" id ="target" action="index.php">
 <!-- <label id="dis"></label><br> -->
-<p>Username:</p> <input type="text" name="user" id="user" /><br />
-<p>Password:</p> <input type="password" name="pass" id="pass" /><br /><br />
-<p id="question">Question:</p> <input type="text" name="answer" id="answer" />
-<center><input type="submit" name="submit" id="submit" /></center>
+Username: <input type="text" name="user" id="user" /><br />
+Password: <input type="password" name="pass" id="pass" /><br /><br />
+<p id="question">Question:</p> <input id="answer" type="text" name="answer" />
+<center><input type="submit" name="submit" id="submit" />
 </form>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
