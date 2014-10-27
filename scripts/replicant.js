@@ -82,7 +82,12 @@ var answerGet = function(){	$('#target').submit(function(){
 
 	var compare = function(){ 
 	$('#target').submit(function() {
-	if (answerActual == questionActual) {
+		var questionValue = $('#question').html();
+		var questionValueArray = $.inArray(questionValue, questionArray);
+		console.log(questionValueArray);
+		var a = $('#answer').val();
+		var aArrayValue = $.inArray(a, answerArray);
+	if (questionValueArray == aArrayValue) {
 		alert("Meatbag confirmed. Proceed.");
 	} else {
 		alert("Nice try, automaton.")
