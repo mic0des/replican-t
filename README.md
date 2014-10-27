@@ -2,7 +2,7 @@
 
 An annoyance free CAPTCHA replacement system.
 
-Instead of ambiguous CAPTCHA, filter out bots by asking your users specific questions that only they know. Because this allows you to pass through your own string values for questions and answers, you're welcome to be as specific as possible (type in all caps or all lowercase) to filter out bots. 
+Instead of ambiguous CAPTCHA, filter out bots by asking your users specific questions that only they know. Because this allows you to pass through your own string values for questions and answers, you're welcome to be as specific as possible (i.e. ask your users to type in all caps or all lowercase, or alternating, or the first two letters caps and the rest lowercase, or only the first word in the sentence, etc.) to filter out bots. 
 
 #Usage
 
