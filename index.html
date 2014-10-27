@@ -3,19 +3,41 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Replican't Demo</title>
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<link href='http://fonts.googleapis.com/css?family=Orbitron:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+	<link rel="icon" type="image/png" href="images/unicorn.ico">
+	<script src="scripts/sweet-alert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/sweet-alert.css">
 </head>
+
 <body>
-
+<div class="header">
 <h1>Replican't</h1>
-<h2>An annoyance free CAPTCHA replacement system.</h2> 
+<img class="uni" src="images/unicorn.jpg" alt="">
+<h2>An annoyance free CAPTCHA replacement system.</h2>
 
+<p>A client-side solution for identity verification to keep pesky bots out.</p>
+<p>Declare your own specific unique questions and answers to match your site content that only your flesh-and-blood users would know.</p> 
+<p>Deckard would be proud.</p>
+<p>(Unless he was a replicant. That ending was ambiguous).</p>
+</div>
+
+<div class="form">
+<h2>DEMO:</h2>
+<p>Specify as many questions as you wish that only your userbase of fleshy non-metallic humans would know.</p>
 <form method="post" id ="target" action="index.php">
 <!-- <label id="dis"></label><br> -->
-Username: <input type="text" name="user" id="user" /><br />
-Password: <input type="password" name="pass" id="pass" /><br /><br />
-<p id="question">Question:</p> <input id="answer" type="text" name="answer" />
-<center><input type="submit" name="submit" id="submit" />
+Username: <input type="text" name="user" id="user" /><br><br>
+Password: <input type="password" name="pass" id="pass" /><br><br>
+<p id="question">Question:</p> <button type="button">Refresh</button> 
+<br>
+<br>
+<input id="answer" type="text" name="answer" />
+<br>
+<input type="submit" name="submit" id="submit" />
 </form>
+</div>
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script src="scripts/main.js"></script>

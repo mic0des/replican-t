@@ -1,50 +1,28 @@
-// $.fn.replicant = function(options) {
-// 	var settings = $.extend({
-// 		var question = "Are you a robot?",
-// 		var answer = "No.",
-// 		var input = $('input')
-// 	}, options);
-// 	var result = if ( input == answer ) {
-// 		$.alert("Meatbag confirmed.")
-// 	} else {
-// 		$.alert("Nice try, automaton.")
-// 	});
-// 	return result;
-// }
-
 var answerArray = [
 	"one",
 	"two",
-	"three",
-	"four",
-	"five"
-	// feel free to add as many as you want, with each new property corresponding to the same property name of the questionObject
+	"nine",
+	"harrison Ford",
+	"RODRIGUEZ",
+	"own",
+	"dave"
+	// feel free to add as many as you want, with each new item corresponding to the same item order of its equivalent question listed in the questionArray
 ];
 
 var questionArray = [
-	"what is 1x1?",
-	"what is 1x2?",
-	"what is 1x3?",
-	"what is 1x4?",
-	"what is 1x5?"
-	// feel free to add as many as you want, with each new property corresponding to the same property name of the answerObject
+	"spell the product of 1x1",
+	"spell the product of 1x2",
+	"spell the product of 3x3",
+	"Who played Deckard in Bladerunner, spelled in all lowercase except for the first letter of his last name?",
+	"Spell in all caps, Bender's last name from Futurama",
+	"What is the third word in the line starting with 'Declare' on this webpage?",
+	"From 2001 A Space Oddyssey, finish the sentence (in lowercase): 'I can't let you do that ___.'"
+	// feel free to add as many as you want, with each new item corresponding to the same item order of its equivalent answer listed in the answerArray
 ];
 
 var randomQuestion = function(questionObject) {
-	var questionArray = [
-		"what is 1x1?",
-		"what is 1x2?",
-		"what is 1x3?",
-		"what is 1x4?",
-		"what is 1x5?"
-		// feel free to add as many as you want, with each new property corresponding to the same property name of the answerObject
-	];
 	var questionIs = questionArray[Math.floor(Math.random()*questionArray.length)];
 	$('#question').text(questionIs);
-	// $("#submit").click(function(){
-	// 	$("#target").submit();
-	// 	$("#submit").attr("disabled", "disabled");
-	// });
 	$('#target').submit(function(e) {
 		e.preventDefault();
 	});
@@ -54,10 +32,6 @@ var randomQuestion = function(questionObject) {
 }
 
 var questionGet = function(){
-	// $('#target').submit(function() {
-	// var a = $('#answer').val();
-	// console.log(a);
-	// });
 	var qArrayValue = $.inArray(randomQuestion(),questionArray);
 	console.log(qArrayValue);
 	questionActual: return qArrayValue;
@@ -65,14 +39,6 @@ var questionGet = function(){
 
 
 var answerGet = function(){	$('#target').submit(function(){
-		var answerArray = [
-			"one",
-			"two",
-			"three",
-			"four",
-			"five"
-			// feel free to add as many as you want, with each new property corresponding to the same property name of the questionObject
-		];
 		var a = $('#answer').val();
 		var aArrayValue = $.inArray(a, answerArray);
 		console.log(aArrayValue);
@@ -88,13 +54,25 @@ var answerGet = function(){	$('#target').submit(function(){
 		var a = $('#answer').val();
 		var aArrayValue = $.inArray(a, answerArray);
 	if (questionValueArray == aArrayValue) {
-		alert("Meatbag confirmed. Proceed.");
+		swal("Meatbag confirmed. Proceed.");
+		$('#answer').val('');
 	} else {
-		alert("Nice try, automaton.")
+		swal("Nice try, automaton.");
+		$('#answer').val('');
+		$('input[type="submit"]').attr('disabled', 'disabled');
 	}
 });
 };
 
+var refresh = function(){
+	$('button').click(function(){
+		var questionIs = questionArray[Math.floor(Math.random()*questionArray.length)];
+		$('#question').text(questionIs);
+		$('input[type="submit"]').removeAttr('disabled');
+		});
+	}
+
 questionGet();
 answerGet();
 compare();
+refresh();
