@@ -12,7 +12,7 @@ Instead of ambiguous CAPTCHA, filter out bots by asking your users specific ques
 <script src="scripts/replicant.js"></script>
 ```
 
-2) Link up your forms with Replican't to activate the dynamically generating guestions, answer input box, refresh and submit buttons.  
+2) Link up your forms with Replican't to activate the dynamically generating questions, answer input box, refresh and submit buttons.  
  
 ```html
 <form>
