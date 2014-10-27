@@ -12,14 +12,14 @@
 // 	return result;
 // }
 
-var answerObject = {
-	one: "one",
-	two: "two",
-	three: "three",
-	four: "four",
-	five: "five"
+var answerArray = [
+	"one",
+	"two",
+	"three",
+	"four",
+	"five"
 	// feel free to add as many as you want, with each new property corresponding to the same property name of the questionObject
-};
+];
 
 var questionArray = [
 	"what is 1x1?",
@@ -55,8 +55,22 @@ var randomQuestion = function(questionObject) {
 	var a = $('#answer').val();
 	console.log(a);
 	});
-	var aArray = $.inArray(q,questionArray);
-	console.log(aArray)
+	var qArrayValue = $.inArray(q,questionArray);
+	console.log(qArrayValue);
+
+	$('#target').submit(function(){
+		var answerArray = [
+			"one",
+			"two",
+			"three",
+			"four",
+			"five"
+			// feel free to add as many as you want, with each new property corresponding to the same property name of the questionObject
+		];
+		var a = $('#answer').val();
+		var aArrayValue = $.inArray(a, answerArray);
+		console.log(aArrayValue);
+	})
 
 }
 
