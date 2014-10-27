@@ -40,7 +40,6 @@ var randomQuestion = function(questionObject) {
 		// feel free to add as many as you want, with each new property corresponding to the same property name of the answerObject
 	];
 	var questionIs = questionArray[Math.floor(Math.random()*questionArray.length)];
-	console.log(questionIs);
 	$('#question').text(questionIs);
 	// $("#submit").click(function(){
 	// 	$("#target").submit();
@@ -51,14 +50,21 @@ var randomQuestion = function(questionObject) {
 	});
 	var q = questionIs;
 	console.log(q);
-	$('#target').submit(function() {
-	var a = $('#answer').val();
-	console.log(a);
-	});
-	var qArrayValue = $.inArray(q,questionArray);
-	console.log(qArrayValue);
+	return questionIs
+}
 
-	$('#target').submit(function(){
+var questionGet = function(){
+	// $('#target').submit(function() {
+	// var a = $('#answer').val();
+	// console.log(a);
+	// });
+	var qArrayValue = $.inArray(randomQuestion(),questionArray);
+	console.log(qArrayValue);
+	questionActual: return qArrayValue;
+};
+
+
+var answerGet = function(){	$('#target').submit(function(){
 		var answerArray = [
 			"one",
 			"two",
@@ -70,14 +76,20 @@ var randomQuestion = function(questionObject) {
 		var a = $('#answer').val();
 		var aArrayValue = $.inArray(a, answerArray);
 		console.log(aArrayValue);
-	})
-
+		answerActual: return aArrayValue
+	});
 }
 
-randomQuestion();
+	var compare = function(){ 
+	$('#target').submit(function() {
+	if (answerActual == questionActual) {
+		alert("Meatbag confirmed. Proceed.");
+	} else {
+		alert("Nice try, automaton.")
+	}
+});
+};
 
-
-var q = $('#question').contents()
-
-
-$.inArray(q,questionArray)
+questionGet();
+answerGet();
+compare();
